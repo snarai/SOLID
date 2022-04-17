@@ -15,7 +15,7 @@ class PayCalculator extends Employee
     {
         // これを超えると残業扱いになる時間（働いた日数 × 通常の勤務時間）
         // MEMO: 厳密には月の規定の出社日数を使うと思いますが、複雑になるのでこれで・・・
-        $regularHourMax = $this->workDayCount * $employee->regularHours();
+        $regularHourMax = $this->workDayCount * $this->regularHours();
 
         // 残業がない場合
         if ($this->workHour <= $regularHourMax) {
