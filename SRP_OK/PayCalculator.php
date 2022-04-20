@@ -30,4 +30,13 @@ class PayCalculator extends Employee
 
         return $regularAmount + $overAmount;
     }
+    /**
+     * main.php で処理を実行します。
+     *
+     *
+     */
+    public function exec()
+    {
+        echo($this->getName() . " さんの今月のお給料は " . number_format($this->calculatePay()) . " 円です。\n");
+    }
 }

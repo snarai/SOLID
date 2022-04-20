@@ -15,7 +15,15 @@ class EmployeeRepository extends Employee
      */
     public function save(): string
     {
-//        echo "データベースの情報を更新しました。";
         return "データベースの情報を更新しました。" . "ID = [" . $this->id . "] name = [" . $this->name . "]\n";
+    }
+    /**
+     * main.php で処理を実行します。
+     *
+     *
+     */
+    public function exec()
+    {
+        echo $this->save();
     }
 }

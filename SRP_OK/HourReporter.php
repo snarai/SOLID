@@ -28,4 +28,13 @@ class HourReporter extends Employee
         }
         return $text;
     }
+    /**
+     * main.php で処理を実行します。
+     *
+     *
+     */
+    public function exec()
+    {
+        echo $this->reportHours();
+    }
 }
