@@ -13,7 +13,7 @@ class EmployeeRepository extends Employee
      *
      * @return string メッセージ
      */
-    public function save(): string
+    private function save(): string
     {
         return "データベースの情報を更新しました。" . "ID = [" . $this->id . "] name = [" . $this->name . "]\n";
     }

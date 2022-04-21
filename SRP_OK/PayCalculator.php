@@ -11,7 +11,7 @@ class PayCalculator extends Employee
      *
      * @return integer 給与額
      */
-    public function calculatePay(): int
+    private function calculatePay(): int
     {
         // これを超えると残業扱いになる時間（働いた日数 × 通常の勤務時間）
         // MEMO: 厳密には月の規定の出社日数を使うと思いますが、複雑になるのでこれで・・・
