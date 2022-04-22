@@ -8,27 +8,27 @@ class Employee
     /**
      * 氏名
      */
-    public string $name;
+    protected string $name;
 
     /**
      * 社員番号
      */
-    public string $id;
+    protected string $id;
 
     /**
      * ある月の出勤日数
      */
-    public int $workDayCount;
+    protected int $workDayCount;
 
     /**
      * ある月の勤務時間
      */
-    public int $workHour;
+    protected int $workHour;
 
     /**
      * 時間単価
      */
-    public int $hourlyPrice;
+    protected int $hourlyPrice;
 
     /**
      * コンストラクタ
