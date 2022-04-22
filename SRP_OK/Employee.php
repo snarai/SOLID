@@ -58,7 +58,7 @@ class Employee
      *
      * @return string 社員名
      */
-    public function getName(): string
+    protected function getName(): string
     {
         return $this->name;
     }
@@ -68,7 +68,7 @@ class Employee
      *
      * @return integer 所定労働時間
      */
-    public function regularHours(): float
+    protected function regularHours(): float
     {
         // 1 日の所定労働時間は 8 時間
         // MEMO: 実際はここでシフトごとの所定労働時間を計算して出していると仮定
