@@ -2,7 +2,6 @@
 
 require_once("./Employee.php");
 
-
 /**
  * 人事クラス
  */

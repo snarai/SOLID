@@ -1,6 +1,5 @@
 <?php
 
-// require_once dirname(__FILE__) . '/Employee.php';
 require_once dirname(__FILE__) . '/PayCalculator.php';
 require_once dirname(__FILE__) . '/HourReporter.php';
 require_once dirname(__FILE__) . '/EmployeeRepository.php';
