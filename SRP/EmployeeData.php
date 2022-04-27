@@ -62,16 +62,4 @@ class Employee
     {
         return $this->name;
     }
-
-    /**
-     * 所定労働時間算出
-     *
-     * @return integer 所定労働時間
-     */
-    protected function regularHours(): float
-    {
-        // 1 日の所定労働時間は 8 時間
-        // MEMO: 実際はここでシフトごとの所定労働時間を計算して出していると仮定
-        return 8.0;
-    }
 }

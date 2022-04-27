@@ -1,6 +1,6 @@
 <?php
 
-require_once("./Employee.php");
+require_once("./EmployeeData.php");
 
 /**
  * 人事クラス
@@ -15,7 +15,7 @@ class HourReporter extends Employee
     private function reportHours(): string
     {
         // 総合で所定労働時間を超えた時間が残業時間
-        $overWorkHour = $this->workHour - ($this->regularHours() * $this->workDayCount);
+        $overWorkHour = $this->workHour - ($this->regularHoursHourReporter() * $this->workDayCount);
 
         $text = "社員番号: " . $this->id . "\n";
         $text .= "お名前: " . $this->name . " さん\n";
@@ -26,6 +26,17 @@ class HourReporter extends Employee
             $text .= "\n！！残業時間が 10 時間を超えています！！\n";
         }
         return $text;
+    }
+    /**
+     * 所定労働時間算出
+     *
+     * @return integer 所定労働時間
+     */
+    protected function regularHoursHourReporter(): float
+    {
+        // 1 日の所定労働時間は 8 時間
+        // MEMO: 実際はここでシフトごとの所定労働時間を計算して出していると仮定
+        return 8.0;
     }
     /**
      * main.php で処理を実行します。
