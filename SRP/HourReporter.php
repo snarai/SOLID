@@ -15,7 +15,7 @@ class HourReporter
     private function reportHours(Employee $employee): string
     {
         // 総合で所定労働時間を超えた時間が残業時間
-        $overWorkHour = $employee->workHour - ($this->regularHoursHourReporter() * $employee->workDayCount);
+        $overWorkHour = $employee->workHour - ($this->regularHours() * $employee->workDayCount);
 
         $text = "社員番号: " . $employee->id . "\n";
         $text .= "お名前: " . $employee->name . " さん\n";
@@ -32,7 +32,7 @@ class HourReporter
      *
      * @return integer 所定労働時間
      */
-    protected function regularHoursHourReporter(): float
+    private function regularHours(): float
     {
         // 1 日の所定労働時間は 8 時間
         // MEMO: 実際はここでシフトごとの所定労働時間を計算して出していると仮定

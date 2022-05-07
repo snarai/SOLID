@@ -16,7 +16,7 @@ class PayCalculator
     {
         // これを超えると残業扱いになる時間（働いた日数 × 通常の勤務時間）
         // MEMO: 厳密には月の規定の出社日数を使うと思いますが、複雑になるのでこれで・・・
-        $regularHourMax = $employee->workDayCount * $this->regularHoursPayCalculator();
+        $regularHourMax = $employee->workDayCount * $this->regularHours();
 
         // 残業がない場合
         if ($employee->workHour <= $regularHourMax) {
@@ -36,7 +36,7 @@ class PayCalculator
      *
      * @return integer 所定労働時間
      */
-    protected function regularHoursPayCalculator(): float
+    private function regularHours(): float
     {
         // 1 日の所定労働時間は 8 時間
         // MEMO: 実際はここでシフトごとの所定労働時間を計算して出していると仮定
