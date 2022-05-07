@@ -5,22 +5,22 @@ require_once("./EmployeeData.php");
 /**
  * 人事クラス
  */
-class HourReporter extends Employee
+class HourReporter
 {
     /**
      * 期間内の労働時間をレポートします。
      *
      * @return integer 月間労働時間
      */
-    private function reportHours(): string
+    private function reportHours(Employee $employee): string
     {
         // 総合で所定労働時間を超えた時間が残業時間
-        $overWorkHour = $this->workHour - ($this->regularHoursHourReporter() * $this->workDayCount);
+        $overWorkHour = $employee->workHour - ($this->regularHoursHourReporter() * $employee->workDayCount);
 
-        $text = "社員番号: " . $this->id . "\n";
-        $text .= "お名前: " . $this->name . " さん\n";
+        $text = "社員番号: " . $employee->id . "\n";
+        $text .= "お名前: " . $employee->name . " さん\n";
         $text .= "\n";
-        $text  .= "総業務時間: " . $this->workHour . " 時間 \n";
+        $text  .= "総業務時間: " . $employee->workHour . " 時間 \n";
         $text .= "残業時間: " . ($overWorkHour > 0 ? $overWorkHour : 0) . "時間 \n";
         if ($overWorkHour > 10) {
             $text .= "\n！！残業時間が 10 時間を超えています！！\n";
@@ -43,8 +43,8 @@ class HourReporter extends Employee
      *
      *
      */
-    public function exec()
+    public function exec(Employee $employee)
     {
-        echo $this->reportHours();
+        echo $this->reportHours($employee);
     }
 }

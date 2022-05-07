@@ -5,29 +5,29 @@ require_once("./EmployeeData.php");
 /**
  * 経理クラス
  */
-class PayCalculator extends Employee
+class PayCalculator
 {
     /**
      * 給与を計算します。
      *
      * @return integer 給与額
      */
-    private function calculatePay(): int
+    private function calculatePay(Employee $employee): int
     {
         // これを超えると残業扱いになる時間（働いた日数 × 通常の勤務時間）
         // MEMO: 厳密には月の規定の出社日数を使うと思いますが、複雑になるのでこれで・・・
-        $regularHourMax = $this->workDayCount * $this->regularHoursPayCalculator();
+        $regularHourMax = $employee->workDayCount * $this->regularHoursPayCalculator();
 
         // 残業がない場合
-        if ($this->workHour <= $regularHourMax) {
-            return $this->workHour * $this->hourlyPrice;
+        if ($employee->workHour <= $regularHourMax) {
+            return $employee->workHour * $employee->hourlyPrice;
         }
 
         // 通常分
-        $regularAmount = $regularHourMax * $this->hourlyPrice;
+        $regularAmount = $regularHourMax * $employee->hourlyPrice;
 
         // 残業分は 1.5 倍
-        $overAmount = ($this->workHour - $regularHourMax) * $this->hourlyPrice * 1.5;
+        $overAmount = ($employee->workHour - $regularHourMax) * $employee->hourlyPrice * 1.5;
 
         return $regularAmount + $overAmount;
     }
@@ -47,8 +47,8 @@ class PayCalculator extends Employee
      *
      *
      */
-    public function exec()
+    public function exec(Employee $employee)
     {
-        echo($this->getName() . " さんの今月のお給料は " . number_format($this->calculatePay()) . " 円です。\n");
+        echo($employee->getName($employee) . " さんの今月のお給料は " . number_format($this->calculatePay($employee)) . " 円です。\n");
     }
 }

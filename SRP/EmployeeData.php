@@ -8,27 +8,27 @@ class Employee
     /**
      * 氏名
      */
-    protected string $name;
+    public string $name;
 
     /**
      * 社員番号
      */
-    protected string $id;
+    public string $id;
 
     /**
      * ある月の出勤日数
      */
-    protected int $workDayCount;
+    public int $workDayCount;
 
     /**
      * ある月の勤務時間
      */
-    protected int $workHour;
+    public int $workHour;
 
     /**
      * 時間単価
      */
-    protected int $hourlyPrice;
+    public int $hourlyPrice;
 
     /**
      * コンストラクタ
@@ -58,7 +58,7 @@ class Employee
      *
      * @return string 社員名
      */
-    protected function getName(): string
+    public function getName(): string
     {
         return $this->name;
     }

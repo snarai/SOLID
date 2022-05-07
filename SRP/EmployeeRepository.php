@@ -2,16 +2,16 @@
 
 require_once("./EmployeeData.php");
 
-class EmployeeRepository extends Employee
+class EmployeeRepository
 {
     /**
      * Database に登録します。
      *
      * @return string メッセージ
      */
-    private function save(): string
+    private function save(Employee $employee): string
     {
-        return "データベースの情報を更新しました。" . "ID = [" . $this->id . "] name = [" . $this->name . "]\n";
+        return "データベースの情報を更新しました。" . "ID = [" . $employee->id . "] name = [" . $employee->name . "]\n";
     }
     /**
      * 所定労働時間算出
@@ -29,8 +29,8 @@ class EmployeeRepository extends Employee
      *
      *
      */
-    public function exec()
+    public function exec(Employee $employee)
     {
-        echo $this->save();
+        echo $this->save($employee);
     }
 }
