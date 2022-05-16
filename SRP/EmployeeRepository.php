@@ -18,7 +18,7 @@ class EmployeeRepository
      *
      *
      */
-    public function exec(Employee $employee)
+    public function saveExec(Employee $employee)
     {
         echo $this->save($employee);
     }
