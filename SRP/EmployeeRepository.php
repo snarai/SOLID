@@ -11,14 +11,14 @@ class EmployeeRepository
      */
     private function save(Employee $employee): string
     {
-        return "データベースの情報を更新しました。" . "ID = [" . $employee->id . "] name = [" . $employee->name . "]\n";
+        return "データベースの情報を更新しました。" . "ID = [" . $employee->getId($employee) . "] name = [" . $employee->getName($employee) . "]\n";
     }
     /**
      * main.php で処理を実行します。
      *
      *
      */
-    public function saveExec(Employee $employee)
+    public function execSave(Employee $employee)
     {
         echo $this->save($employee);
     }

@@ -20,7 +20,7 @@ switch ($argv[1]) {
         break;
     case "DB管理者":
         $deptClass = new EmployeeRepository();
-        $proc = "saveExec";
+        $proc = "execSave";
         break;
     default:
         echo "エラー: 第一引数に経理/人事/DB管理者のいずれかを設定して実行ください。\n";

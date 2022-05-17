@@ -8,27 +8,27 @@ class Employee
     /**
      * 氏名
      */
-    public string $name;
+    private string $name;
 
     /**
      * 社員番号
      */
-    public string $id;
+    private string $id;
 
     /**
      * ある月の出勤日数
      */
-    public int $workDayCount;
+    private int $workDayCount;
 
     /**
      * ある月の勤務時間
      */
-    public int $workHour;
+    private int $workHour;
 
     /**
      * 時間単価
      */
-    public int $hourlyPrice;
+    private int $hourlyPrice;
 
     /**
      * コンストラクタ
@@ -62,4 +62,45 @@ class Employee
     {
         return $this->name;
     }
+
+    /**
+     * 社員番号を返却します。
+     *
+     * @return string 社員番号
+     */
+    public function getId(): string
+    {
+        return $this->id;
+    }
+
+    /**
+     * 働いた日数を返却します。
+     *
+     * @return string 働いた日数
+     */
+    public function getWorkDayCount(): string
+    {
+        return $this->workDayCount;
+    }
+
+    /**
+     * 労働時間を返却します。
+     *
+     * @return string 労働時間
+     */
+    public function getWorkHour(): string
+    {
+        return $this->workHour;
+    }
+
+    /**
+     * 時間給を返却します。
+     *
+     * @return string 時間給
+     */
+    public function getHourlyPrice(): string
+    {
+        return $this->hourlyPrice;
+    }
+
 }

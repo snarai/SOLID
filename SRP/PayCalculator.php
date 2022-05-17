@@ -16,18 +16,18 @@ class PayCalculator
     {
         // これを超えると残業扱いになる時間（働いた日数 × 通常の勤務時間）
         // MEMO: 厳密には月の規定の出社日数を使うと思いますが、複雑になるのでこれで・・・
-        $regularHourMax = $employee->workDayCount * $this->regularHours();
+        $regularHourMax = $employee->getWorkDayCount($employee) * $this->regularHours();
 
         // 残業がない場合
-        if ($employee->workHour <= $regularHourMax) {
-            return $employee->workHour * $employee->hourlyPrice;
+        if ($employee->getWorkHour($employee) <= $regularHourMax) {
+            return $employee->getWorkHour($employee) * $employee->getHourlyPrice($employee);
         }
 
         // 通常分
-        $regularAmount = $regularHourMax * $employee->hourlyPrice;
+        $regularAmount = $regularHourMax * $employee->getHourlyPrice($employee);
 
         // 残業分は 1.5 倍
-        $overAmount = ($employee->workHour - $regularHourMax) * $employee->hourlyPrice * 1.5;
+        $overAmount = ($employee->getWorkHour($employee) - $regularHourMax) * $employee->getHourlyPrice($employee) * 1.5;
 
         return $regularAmount + $overAmount;
     }
