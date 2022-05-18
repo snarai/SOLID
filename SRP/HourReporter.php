@@ -15,12 +15,12 @@ class HourReporter
     private function reportHours(Employee $employee): string
     {
         // 総合で所定労働時間を超えた時間が残業時間
-        $overWorkHour = $employee->getWorkHour($employee) - ($this->regularHours() * $employee->getWorkDayCount($employee));
+        $overWorkHour = $employee->getWorkHour() - ($this->regularHours() * $employee->getWorkDayCount());
 
-        $text = "社員番号: " . $employee->getId($employee) . "\n";
-        $text .= "お名前: " . $employee->getName($employee) . " さん\n";
+        $text = "社員番号: " . $employee->getId() . "\n";
+        $text .= "お名前: " . $employee->getName() . " さん\n";
         $text .= "\n";
-        $text  .= "総業務時間: " . $employee->getWorkHour($employee) . " 時間 \n";
+        $text  .= "総業務時間: " . $employee->getWorkHour() . " 時間 \n";
         $text .= "残業時間: " . ($overWorkHour > 0 ? $overWorkHour : 0) . "時間 \n";
         if ($overWorkHour > 10) {
             $text .= "\n！！残業時間が 10 時間を超えています！！\n";

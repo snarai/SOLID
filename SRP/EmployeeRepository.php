@@ -11,7 +11,7 @@ class EmployeeRepository
      */
     private function save(Employee $employee): string
     {
-        return "データベースの情報を更新しました。" . "ID = [" . $employee->getId($employee) . "] name = [" . $employee->getName($employee) . "]\n";
+        return "データベースの情報を更新しました。" . "ID = [" . $employee->getId() . "] name = [" . $employee->getName() . "]\n";
     }
     /**
      * main.php で処理を実行します。
