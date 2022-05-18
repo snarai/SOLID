@@ -12,7 +12,7 @@ class HourReporter
      *
      * @return integer 月間労働時間
      */
-    private function reportHours(Employee $employee): string
+    private function reportHours(EmployeeData $employee): string
     {
         // 総合で所定労働時間を超えた時間が残業時間
         $overWorkHour = $employee->getWorkHour() - ($this->regularHours() * $employee->getWorkDayCount());
@@ -43,7 +43,7 @@ class HourReporter
      *
      *
      */
-    public function exec(Employee $employee)
+    public function exec(EmployeeData $employee)
     {
         echo $this->reportHours($employee);
     }

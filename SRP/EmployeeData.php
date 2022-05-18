@@ -3,7 +3,7 @@
 /**
  * 社員クラス
  */
-class Employee
+class EmployeeData
 {
     /**
      * 氏名

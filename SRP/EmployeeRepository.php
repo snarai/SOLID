@@ -9,7 +9,7 @@ class EmployeeRepository
      *
      * @return string メッセージ
      */
-    private function save(Employee $employee): string
+    private function save(EmployeeData $employee): string
     {
         return "データベースの情報を更新しました。" . "ID = [" . $employee->getId() . "] name = [" . $employee->getName() . "]\n";
     }
@@ -18,7 +18,7 @@ class EmployeeRepository
      *
      *
      */
-    public function execSave(Employee $employee)
+    public function execSave(EmployeeData $employee)
     {
         echo $this->save($employee);
     }

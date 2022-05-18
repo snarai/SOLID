@@ -12,7 +12,7 @@ class PayCalculator
      *
      * @return integer 給与額
      */
-    private function calculatePay(Employee $employee): int
+    private function calculatePay(EmployeeData $employee): int
     {
         // これを超えると残業扱いになる時間（働いた日数 × 通常の勤務時間）
         // MEMO: 厳密には月の規定の出社日数を使うと思いますが、複雑になるのでこれで・・・
@@ -47,7 +47,7 @@ class PayCalculator
      *
      *
      */
-    public function exec(Employee $employee)
+    public function exec(EmployeeData $employee)
     {
         echo($employee->getName($employee) . " さんの今月のお給料は " . number_format($this->calculatePay($employee)) . " 円です。\n");
     }

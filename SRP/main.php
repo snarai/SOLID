@@ -28,10 +28,10 @@ switch ($argv[1]) {
 }
 
 $employees = [
-    new Employee("ハトホル", "0001", 20, 160, 1000),
-    new Employee("ソプデト", "0002", 30, 300, 2000),
-    new Employee("バステト", "0003", 20, 180, 5000),
-    new Employee("メジェド", "0004", 19, 114, 3200)
+    new EmployeeData("ハトホル", "0001", 20, 160, 1000),
+    new EmployeeData("ソプデト", "0002", 30, 300, 2000),
+    new EmployeeData("バステト", "0003", 20, 180, 5000),
+    new EmployeeData("メジェド", "0004", 19, 114, 3200)
 ];
 
 foreach ($employees as $employee) {
