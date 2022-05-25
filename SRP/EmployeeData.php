@@ -3,32 +3,32 @@
 /**
  * 社員クラス
  */
-class Employee
+class EmployeeData
 {
     /**
      * 氏名
      */
-    protected string $name;
+    private string $name;
 
     /**
      * 社員番号
      */
-    protected string $id;
+    private string $id;
 
     /**
      * ある月の出勤日数
      */
-    protected int $workDayCount;
+    private int $workDayCount;
 
     /**
      * ある月の勤務時間
      */
-    protected int $workHour;
+    private int $workHour;
 
     /**
      * 時間単価
      */
-    protected int $hourlyPrice;
+    private int $hourlyPrice;
 
     /**
      * コンストラクタ
@@ -58,20 +58,49 @@ class Employee
      *
      * @return string 社員名
      */
-    protected function getName(): string
+    public function getName(): string
     {
         return $this->name;
     }
 
     /**
-     * 所定労働時間算出
+     * 社員番号を返却します。
      *
-     * @return integer 所定労働時間
+     * @return string 社員番号
      */
-    protected function regularHours(): float
+    public function getId(): string
     {
-        // 1 日の所定労働時間は 8 時間
-        // MEMO: 実際はここでシフトごとの所定労働時間を計算して出していると仮定
-        return 8.0;
+        return $this->id;
     }
+
+    /**
+     * 働いた日数を返却します。
+     *
+     * @return string 働いた日数
+     */
+    public function getWorkDayCount(): string
+    {
+        return $this->workDayCount;
+    }
+
+    /**
+     * 労働時間を返却します。
+     *
+     * @return string 労働時間
+     */
+    public function getWorkHour(): string
+    {
+        return $this->workHour;
+    }
+
+    /**
+     * 時間給を返却します。
+     *
+     * @return string 時間給
+     */
+    public function getHourlyPrice(): string
+    {
+        return $this->hourlyPrice;
+    }
+
 }

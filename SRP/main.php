@@ -11,13 +11,16 @@ if (count($argv) === 1) {
 
 switch ($argv[1]) {
     case "経理":
-        $deptClass = "PayCalculator";
+        $deptClass = new PayCalculator();
+        $proc = "exec";
         break;
     case "人事":
-        $deptClass = "HourReporter";
+        $deptClass = new HourReporter();
+        $proc = "exec";
         break;
     case "DB管理者":
-        $deptClass = "EmployeeRepository";
+        $deptClass = new EmployeeRepository();
+        $proc = "execSave";
         break;
     default:
         echo "エラー: 第一引数に経理/人事/DB管理者のいずれかを設定して実行ください。\n";
@@ -25,14 +28,14 @@ switch ($argv[1]) {
 }
 
 $employees = [
-    new $deptClass("ハトホル", "0001", 20, 160, 1000),
-    new $deptClass("ソプデト", "0002", 30, 300, 2000),
-    new $deptClass("バステト", "0003", 20, 180, 5000),
-    new $deptClass("メジェド", "0004", 19, 114, 3200)
+    new EmployeeData("ハトホル", "0001", 20, 160, 1000),
+    new EmployeeData("ソプデト", "0002", 30, 300, 2000),
+    new EmployeeData("バステト", "0003", 20, 180, 5000),
+    new EmployeeData("メジェド", "0004", 19, 114, 3200)
 ];
 
 foreach ($employees as $employee) {
-    echo ($employee->exec());
+    echo ($deptClass->$proc($employee));
     echo "\n";
     echo "=========================\n";
 }
