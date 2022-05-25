@@ -1,7 +1,7 @@
 # SOLID
 
 ## SRP
-SRPに準拠したコード（SRP_OK）と準拠していないコード（SRP_NG）
+SRPに準拠したコード（SRP）と準拠していないコード（SRP_NG）
 
 ### 使い方
 
